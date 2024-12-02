@@ -11,8 +11,7 @@ while True:
         print('Вводите числа!')
     except ZeroDivisionError:
         print('Нельзя делить на 0')
-    if weight < 0 or height < 0:
-        raise ValueError("Рост/вес не могут быть отрицательными!")
+
 
 if imt <= 16:
     print('У вас выраженный дефицит массы тела.')

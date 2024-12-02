@@ -1,17 +1,19 @@
+class NegativeValueError(ValueError):
+    pass
 while True:
     try:
         weight = int(input('Введите ваш вес, кг:'))
         height = float(input('Введите ваш рост, м:'))
 
         if weight < 0 or height < 0:
-            raise ValueError("Рост/вес не могут быть отрицательными!")
+            raise NegativeValueError("Рост/вес не могут быть отрицательными!")
         imt = weight / (height ** 2)
         print(f'Ваш индекс массы тела: {imt}')
         break
-    except ValueError as e:
+    except NegativeValueError as e:
         print(e)
-    except TypeError as f:
-        print(f)
+    except ValueError:
+        print("Вводите числа!")
 
     except ZeroDivisionError:
         print('Нельзя делить на 0')
